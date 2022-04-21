@@ -35,8 +35,41 @@ import fetch from 'node-fetch'
 // // --------------
 
 // tighter version of the above
-fetch('https://api.sampleapis.com/beers/ale')
-.then(response => response.json())
-.then(beers => console.log(beers [99]))
-.catch(err => console.error(err))
+// fetch('https://api.sampleapis.com/beers/ale')
+// .then(response => response.json())
+// .then(beers => console.log(beers [99]))
+// .catch(err => console.error(err))
 
+//GET fetch
+function goGetMyBeers() {
+    const newBeer = {price : '$7', name: 'Stela', id: 220}
+
+    fetch ('https://api.sampleapis.com/beers/ale')//go and get data API
+.then(myResponse => myResponse.json())// formating the response
+// .then(allBeers => console.log(allBeers[99].price))//
+.then(data => {
+    console.log(data)
+    data.push(newBeer) 
+    console.log(data[180])
+})
+//.catch((myErr) => {console.log('we got an error:',myErr)})
+.catch(myErr => console.log('we got an error:',myErr))// shorter way since only 1 funtionand 1 parameter
+
+fetch('https://api.sampleapis.com/coffee/hot')
+.then(allCoffees => (coffes))}
+goGetMyBeers()
+
+// one way to write anonymous
+// function (myErr) {
+//    return console.log(myErr)
+//    console.log('test')// this line will never run
+// }
+
+// //arrow function way
+// () => {}
+// () => {
+//     return console.log('test') // explicit return
+//     console.log('test') // this code will never run
+// }
+
+// () => console.log('test') // implicit return
