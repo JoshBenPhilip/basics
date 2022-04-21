@@ -41,6 +41,7 @@ import fetch from 'node-fetch'
 // .catch(err => console.error(err))
 
 //GET fetch
+
 function goGetMyBeers() {
     const newBeer = {price : '$7', name: 'Stela', id: 220}
 
@@ -48,16 +49,32 @@ function goGetMyBeers() {
 .then(myResponse => myResponse.json())// formating the response
 // .then(allBeers => console.log(allBeers[99].price))//
 .then(data => {
-    console.log(data)
+    //console.log(data)
     data.push(newBeer) 
-    console.log(data[180])
-})
+    return (data)
+}) 
 //.catch((myErr) => {console.log('we got an error:',myErr)})
 .catch(myErr => console.log('we got an error:',myErr))// shorter way since only 1 funtionand 1 parameter
+}
 
+function goGetMyCoffee() {
 fetch('https://api.sampleapis.com/coffee/hot')
-.then(allCoffees => (coffes))}
-goGetMyBeers()
+ .then(myResponse => myResponse.json())// formating the response
+ .then(data => {
+    //console.log(data)
+    return (data)
+})
+.catch(myErr => console.log('we got an error:',myErr))// shorter way since only 1 funtionand 1 parameter
+
+}
+const beer = goGetMyBeers ()
+const coffee = goGetMyCoffee()
+ //goGetMyCoffee()
+ //goGetMyBeers()
+
+ const goGetMyBeersAndCoffee = [... [coffee], ...[beer]]
+
+ console.log(goGetMyBeersAndCoffee)
 
 // one way to write anonymous
 // function (myErr) {
