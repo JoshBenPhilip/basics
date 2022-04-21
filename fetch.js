@@ -1,6 +1,7 @@
-const fetch = require ('node-fetch')
 
-async function getDataAsync(){ 
+import fetch from 'node-fetch'
+
+async function getDataAsync() { 
 try{
 const response = await fetch('https://api.sampleapis.com/beers/ale')//get -> Promise
 const data = await response.json()
@@ -10,6 +11,7 @@ console.log(data)
 }
 }
 
+getDataAsync()
 
 // // -----
 
