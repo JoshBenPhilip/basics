@@ -62,7 +62,7 @@ fetch('https://api.sampleapis.com/coffee/hot')
  .then(myResponse => myResponse.json())// formating the response
  .then(data => {
     //console.log(data)
-    return (data)
+    return (data[])
 })
 .catch(myErr => console.log('we got an error:',myErr))// shorter way since only 1 funtionand 1 parameter
 
